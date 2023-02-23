@@ -68,6 +68,7 @@ console.log(groupCar)
 // console.log('Jumlah Text: ', text.length)
 // alert('Jumlah Huruf: ' + text.length)
 
+// var bisa direplace ulang, const tidak bisa direplace atau dideclare ulang 
 const score = true
 const attendance = false
 // const attitude = false
@@ -136,3 +137,89 @@ function logger(name, age){
 
 logger('Gladys', 19)
 
+//FUNCTION EXPRESSION 1
+// const logger2 = function(name, age){
+//     const result = 'nama: ${name} dan usia: ${age}'
+//     return result
+// }
+
+// const gladys = logger2('Gladys', 19)
+// console.log(gladys)
+
+
+//FUNCTION EXPRESSION 2
+const logger3 = function(name, age){
+    const result3 = "nama: " + name + " dan usia: " + age
+    return result3
+}
+
+const gladyst = logger3('Gladys', 19)
+console.log(gladyst)
+
+// bisa pake cara 1 atau cara 2
+
+// tes saja
+const now = new Date() // ini nanti hasilnya ada tahun, bulan, tanggal, tp ga semua dibutuhkan kalau lg programming
+const year = now.getFullYear() // untuk dapat tahunnya saja
+console.log('TEST TAHUN', year)
+
+// menghitung umur orang dengan menggunakan function
+const checkAge = function(born){
+    const now = new Date()
+    const year = now.getFullYear()
+    const result = year - born
+    return result // expression butuh return supaya ga error
+}
+const agus = checkAge(2003)
+console.log('umur agus: ' + agus)
+
+// ARROW FUNCTION -> termasuk bagian dari expression, tp ada perbedaan cara panggilnya
+const logger4 = (name, age)=>{
+    const result = "nama: " + name + " dan usia: " + age
+    return result
+}
+console.log(logger4('Gladys', 19))
+
+// ini pakai rumus BMI ya (cari kategori badan ideal dari tinggi dan berat badan)
+const bmiMan = (weight, height) => {
+    const bmiManResult = weight/(height*height)
+    let resultIndicator
+
+    console.log(bmiManResult)
+
+    if (bmiManResult < 17){
+        resultIndicator = "Kurus Berat"
+    }else if(bmiManResult >= 17 && bmiManResult <= 18.4){
+        resultIndicator = "Kurus Ringan"
+    }else if(bmiManResult >= 18.5 && bmiManResult <= 25){
+        resultIndicator = "Normal"
+    }else if(bmiManResult >= 25.1 && bmiManResult <= 27){
+        resultIndicator = "Gemuk"
+    }else{
+        resultIndicator = "Ingat Berat Badan"
+    }
+
+    return resultIndicator
+}
+console.log(bmiMan(70, 1.7))
+
+//MODULAR FUNCTION
+function splitToArray(str){
+    var tempArray = str.split(" ");
+    return tempArray;
+}
+
+function jumlahKata(kalimat){
+    var result = splitToArray(kalimat);
+    var arrayLength = result.length;
+    return arrayLength;
+}
+
+console.log(jumlahKata("Hello Selamat Pagi"));
+
+// JavaScript DOM 
+// detailnya bisa dilihat di w3schools
+
+// DOM -> Document Object Model
+
+// trigger DOM -> pakai id, class, dll
